@@ -1,6 +1,6 @@
 # Server Time API
 
-Простой тестовый бэкенд на FastAPI. Возвращает текущее локальное время сервера.
+Простой тестовый бэкенд на FastAPI. Возвращает текущие время и дату сервера.
 
 ## Запуск
 
@@ -12,13 +12,22 @@ python -m venv .venv
 
 Сервер слушает http://127.0.0.1:8000.
 
-## Эндпоинт
+## Эндпоинты
 
 `GET /time`
 
 ```json
 {
   "server_time": "2026-09-30T15:32:38+01:00",
+  "timezone": "Westeuropäische Sommerzeit"
+}
+```
+
+`GET /date` — локальная дата сервера. `GET /date/utc` — та же дата в UTC.
+
+```json
+{
+  "server_date": "2026-09-30",
   "timezone": "Westeuropäische Sommerzeit"
 }
 ```
